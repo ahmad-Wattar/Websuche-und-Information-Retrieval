@@ -7,4 +7,4 @@ do
 done
 
 
-echo $(python3 bb.py $input_dir $output_dir) > /dev/null
+echo $(python3 indexing_full.ipynb $input_dir $output_dir) > /dev/null

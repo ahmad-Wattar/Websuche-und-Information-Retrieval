@@ -24,7 +24,7 @@ es = Elasticsearch()
 for filename in os.listdir(input_dir):
     if filename.endswith(".zip"):
         with ZipFile((input_dir+"/{}").format(filename), 'r') as zip:
-            zip.extractall()
+            zip.extractall(input_dir)
             
 
 #create index, iterating over txt-files
@@ -90,4 +90,10 @@ for i in queries:
 qrels = {'qid': qid, 'Q0': Q0, 'doc': doc, 'rank':rank, 'score':score, 'tag':tag}
 df = pd.DataFrame(qrels)
 df.to_csv((output_dir+'/run.txt'), sep = ' ', index = False, header = False)
+
+
+# In[3]:
+
+
+#es.indices.delete(index='test_index')
 

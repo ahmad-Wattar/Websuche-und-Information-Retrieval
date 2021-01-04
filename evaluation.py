@@ -13,16 +13,16 @@ import re
 def evaluate_run(run_path, qrel_path):
     run = pd.read_csv(run_path, sep = ' ', names = ['topic','Q0','id','rank','score','team'])
 
-    run['topic_mustbe'] = 0
+    #run['topic_mustbe'] = 0
 
-    i = 1
-    t = 0
-    for idx, row in run.iterrows():
-        if row['rank']>1:
-            run.at[idx,'topic_mustbe']=t
-        else:
-            t+=1
-            run.at[idx,'topic_mustbe']=t
+    #i = 1
+    #t = 0
+    #for idx, row in run.iterrows():
+        #if row['rank']>1:
+            #run.at[idx,'topic_mustbe']=t
+        #else:
+            #t+=1
+            #run.at[idx,'topic_mustbe']=t
 
 #'touche2020-task2-relevance-withbaseline(1).qrels'
     qrel = pd.read_csv(qrel_path, sep = ' ', names = ['topic','Q0','id','relevance'])
@@ -39,7 +39,7 @@ def evaluate_run(run_path, qrel_path):
         runs[str(i)] = {}
     
     for idx, row in run.iterrows():
-        runs[str(row['topic_mustbe'])][row['id']] = row['score']
+        runs[str(row['topic'])][row['id']] = row['score']
 
     evaluator = pytrec_eval.RelevanceEvaluator(
         qrels, {'map_cut', 'ndcg_cut'})

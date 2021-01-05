@@ -1,9 +1,6 @@
 #!/bin/bash
-
-
 input_dir="data/docs"
 output_dir="results"
-
 while getopts ":i::o:" opt; do
   case ${opt} in
     i )
@@ -20,8 +17,5 @@ done
 shift $((OPTIND -1))
 echo $input_dir
 echo $output_dir
-
 pip install elasticsearch
-
 python indexing_full.py $input_dir $output_dir
-    

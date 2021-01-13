@@ -9,6 +9,8 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import json
 import nltk
+import re
+import pickle
 nltk.download('stopwords')
 nltk.download('punkt')
 
@@ -16,7 +18,7 @@ nltk.download('punkt')
 # In[2]:
 
 
-f = open('topics.json')
+f = open('data/topics.json')
 topics = json.load(f)
 
 
@@ -26,10 +28,10 @@ topics = json.load(f)
 lis =[]
 for i in range(len(topics)):
     x=(topics[i]['title'])
-    lis.append(x)
+    lis.append(re.sub('[?:,]', '', x))
 converted_list = [x.lower() for x in lis]
-print (converted_list)
-
+print ("Topics: ", converted_list)
+print("\n")
 
 # In[4]:
 
@@ -50,7 +52,9 @@ for i in tokenized_sents:
     lemmatized_output_1 = ([lemmatizer.lemmatize(w,pos="a") for w in lemmatized_output_0])
     lemmatized_output_2 = ' '.join(([lemmatizer.lemmatize(w,pos="v") for w in lemmatized_output_1]))
     lis2.append(lemmatized_output_2)   
-print(lis2)
+print("Lemmatized completely: \n", lis2)
+print("\n")
+
 
 
 # In[7]:
@@ -63,8 +67,9 @@ for i in tokenized_sents:
     lemmatized_output_0 = ([lemmatizer.lemmatize(w,pos="n") for w in tokens_without_sw])
     lemmatized_output_1 = ' '.join(([lemmatizer.lemmatize(w,pos="v") for w in lemmatized_output_0]))
     lis3.append(lemmatized_output_1)   
-print(lis3)
-
+print("Lemmatized verbs and nouns: \n", lis3)
+with open('data/topics_lemmatized.txt', 'wb') as fp:
+    pickle.dump(lis3, fp)
 
 # In[ ]:
 

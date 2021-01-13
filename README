@@ -1,0 +1,23 @@
+To test the proposed solution create a docker container and run the provided bash files within it.
+
+1. Creating image from the main directory of the repository:
+sudo docker build -f ./Docker/Dockerfile -t <imagename>
+
+2. Creating container:
+sudo docker run -t -d --name <dockername> <imagename>
+
+3. Running container:
+sudo docker exec -it <dockername> /bin/bash
+
+4. Executing files within the container:
+bash my-software.sh
+bash eval.sh
+
+In case of errors try commands without sudo.
+To remove the container run following commands outside of the container:
+
+sudo docker ps -a 
+
+Copy CONTAINER ID and execute the following commands:
+sudo docker stop <CONTAINER ID>
+sudo docker rm <CONTAINER ID>

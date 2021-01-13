@@ -54,5 +54,8 @@ def evaluate_run(run_path, qrel_path):
     with open((filename[0]+'_evaluated.json'), 'w') as f:
         json.dump(results, f)
         
+    s = sum(results.values())
+    print("Average ndcg_cut_10: ", s/50)
+        
 evaluate_run(sys.argv[1], sys.argv[2])
 

@@ -1,0 +1,31 @@
+run_test_t = test_index title (both query and title not lemmatized, search in titles in test_index with first 110 docs):
+Average ndcg_cut_10:  0.3438960405184605
+
+run_test_t_lem = test_index title lemmatized
+Average ndcg_cut_10:  0.2807004136761627
+
+
+run_test_d_lem = test_index doc lemmatized
+Average ndcg_cut_10:  0.28939218512082043
+
+run_test_d_t_lem = test_index doc title lemmatized
+Average ndcg_cut_10:  0.3626119223037479
+
+run_test_d_t_a_lem = test_index doc title args lemmatized
+Average ndcg_cut_10:  0.34575966600712604
+
+run_test_a_lem = test_index args lemmatized
+Average ndcg_cut_10:  0.26719245894265536
+
+run_test_d_a_lem = test_index args doc lemmatized
+Average ndcg_cut_10:  0.27144182744050127
+
+
+run_p_t_lem = pipeline_index title lemmatized, full index:
+Average ndcg_cut_10:  0.2579004076939518
+
+
+run_p_t = pipeline_index title not lemmatized, full index:
+Average ndcg_cut_10:  0.17954799963536516
+
+

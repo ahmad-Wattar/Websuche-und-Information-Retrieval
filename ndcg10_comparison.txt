@@ -1,31 +1,62 @@
 run_test_t = test_index title (both query and title not lemmatized, search in titles in test_index with first 110 docs):
 Average ndcg_cut_10:  0.3438960405184605
+Average recall_10:  0.20370484865454988
 
 run_test_t_lem = test_index title lemmatized
 Average ndcg_cut_10:  0.2807004136761627
+Average recall_10:  0.1769850223009375
+
+
+run_test_t_a_lem = test_index title args lem
+Average ndcg_cut_10:  0.3434471534986768
+Average recall_10:  0.21468152132994425
+
+run_test_t_a_lem_syn.txt = test_index title args lem syn
+Average ndcg_cut_10:  0.3618176740357195
+Average recall_10:  0.24028405870870131
+Av. precision:  0.3580000000000002
+F1-score:  0.2875613741184377
 
 
 run_test_d_lem = test_index doc lemmatized
 Average ndcg_cut_10:  0.28939218512082043
+Average recall_10:  0.18189683324671058
+
 
 run_test_d_t_lem = test_index doc title lemmatized
 Average ndcg_cut_10:  0.3626119223037479
+Average recall_10:  0.22536198379833242
+
 
 run_test_d_t_a_lem = test_index doc title args lemmatized
 Average ndcg_cut_10:  0.34575966600712604
+Average recall_10:  0.21324914774762935
+
 
 run_test_a_lem = test_index args lemmatized
 Average ndcg_cut_10:  0.26719245894265536
+Average recall_10:  0.17952480735544982
+
 
 run_test_d_a_lem = test_index args doc lemmatized
 Average ndcg_cut_10:  0.27144182744050127
+Average recall_10:  0.1788943312487539
+
 
 
 run_p_t_lem = pipeline_index title lemmatized, full index:
 Average ndcg_cut_10:  0.2579004076939518
+Average recall_10:  0.15407453867770418
 
+run_p_t_a_lem = pipeline_index title and args lemmatized, full index (args for first 100):
+Average ndcg_cut_10:  0.262906576877699
+Average recall_10:  0.15222392822531605
+
+run_p_t_lem_100 = pipeline_index title lemmatized, full index:
+Average ndcg_cut_10:  0.16515419979078366
+Average recall_10:  0.09408563955694048
 
 run_p_t = pipeline_index title not lemmatized, full index:
 Average ndcg_cut_10:  0.17954799963536516
-
+Average recall_10:  0.11069816418567903
 

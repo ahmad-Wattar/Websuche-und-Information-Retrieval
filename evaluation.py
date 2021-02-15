@@ -42,20 +42,31 @@ def evaluate_run(run_path, qrel_path):
         runs[str(row['topic'])][row['id']] = row['score']
 
     evaluator = pytrec_eval.RelevanceEvaluator(
-        qrels, {'map_cut', 'ndcg_cut'})
-
+        qrels,{'map_cut', 'ndcg_cut', 'recall', 'P'})
+#{'map_cut', 'ndcg_cut', 'recall'}
     res = evaluator.evaluate(runs)
 
     results = {}
+    recall = {}
+    pres = {}
     for key in res:
         results[key] = res[key]['ndcg_cut_10']
+        recall[key] = res[key]['recall_10']
+        pres[key] = res[key]['P_10']
+        print(res[key])
     
     filename = re.split('\.', sys.argv[1])
     with open((filename[0]+'_evaluated.json'), 'w') as f:
         json.dump(results, f)
         
     s = sum(results.values())
+    r = sum(recall.values())/50
+    p = sum(pres.values())/50
+    f1 = (2*(r*p)/(r+p))
     print("Average ndcg_cut_10: ", s/50)
+    print("Average recall_10: ", r)
+    print("Av. precision: ", p)
+    print("F1-score: ",f1)
         
 evaluate_run(sys.argv[1], sys.argv[2])
 

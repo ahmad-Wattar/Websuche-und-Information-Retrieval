@@ -18,4 +18,4 @@ shift $((OPTIND -1))
 echo $input_dir
 echo $output_dir
 pip install elasticsearch
-python indexing_full.py $input_dir $output_dir
+python indexing_final.py $input_dir $output_dir

@@ -1,7 +1,7 @@
 Unnamed: 0	query	objs	syn
 0	difference sex love	sex love	sexual activity sex arouse love beloved sexual love sleep together love
 1	better laptop desktop	laptop desktop	desktop background desktop
-2	better canon nikon	canon nikon	canon canyon nikon
+2	better canon nikon	0	0.0
 3	best dish detergent	dish detergent	detergent detergent
 4	best city live	city	city city
 5	longest river u.s .	river	river river
@@ -10,7 +10,7 @@ Unnamed: 0	query	objs	syn
 8	linux better window	0	0.0
 9	sleep better	sleep	sleep rest sleep
 10	buy lcd tv plasma tv	0	0.0
-11	train plane better choice	train plane	train string caravan gearing discipline prepare educate aim coach trail airplane plane flat plane
+11	train plane better choice	trane plane	airplane plane flat plane
 12	highest mountain earth	mountain	mountain batch mountain
 13	prefer chinese medicine western medicine	medicine	medicine music medicate medicine
 14	best wash machine brand	brand	trade name brand mark sword stigmatize post brand
@@ -41,7 +41,7 @@ Unnamed: 0	query	objs	syn
 39	operate system better performance window 7 window 8	performance	performance operation performance
 40	smartphone better battery life xperia iphone	smartphone battery	battery barrage battery
 41	four wheel truck better ford toyota	truck	truck hand truck truck
-42	prefer leica camera nikon portrait photograph	camera portrait photograph	camera television camera portrayal portrait photograph photograph
+42	prefer leica camera nikon portrait photograph	camera portait photograph	camera television camera photograph photograph
 43	company larger capitalization apple microsoft	company capitalization	company caller party ship's company capitalization capitalization
 44	laptop better durability hp	laptop durability	lastingness durability
 45	beverage calorie glass beer cider	beverage calorie glass beer cider	beverage Calorie calorie glass field glass methamphetamine looking glass glaze beer cider cider

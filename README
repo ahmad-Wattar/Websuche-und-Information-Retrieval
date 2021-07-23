@@ -21,3 +21,8 @@ sudo docker ps -a
 Copy CONTAINER ID and execute the following commands:
 sudo docker stop <CONTAINER ID>
 sudo docker rm <CONTAINER ID>
+
+
+
+
+The final version used in Touche Lab 2021 is stored under final_version_for_tira.py

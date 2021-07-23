@@ -1,6 +1,7 @@
 #!/bin/bash
-input_dir="data/docs"
-output_dir="results"
+
+input_dir="data_final"
+output_dir="results_final"
 while getopts ":i::o:" opt; do
   case ${opt} in
     i )
@@ -15,7 +16,9 @@ while getopts ":i::o:" opt; do
   esac
 done
 shift $((OPTIND -1))
-echo $input_dir
-echo $output_dir
-pip install elasticsearch
-python indexing_final.py $input_dir $output_dir
+echo "$input_dir" >> input_dir.txt
+echo "$output_dir" >> output_dir.txt
+sudo docker build -f ./Docker/Dockerfile -t mysoft
+sudo docker run -t -d --name touche mysoft
+sudo docker exec -it touche /bin/bash
+bash my-software-final.sh

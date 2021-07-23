@@ -1,8 +1,8 @@
 FROM python:latest
 WORKDIR /app
-COPY data data 
-COPY results results 
-COPY eval.sh evaluation.py indexing_full.py my-software.sh touche2020-task2-relevance-withbaseline(1).qrels ./
+COPY data_final data_final 
+COPY results_final results_final 
+COPY final_version_for_tira.py my-software-final.sh input_dir.txt output_dir.txt ./
 # install python dependency
 RUN pip install requests boilerpy3 elasticsearch pandas; \
 # re sys os zipfile; \

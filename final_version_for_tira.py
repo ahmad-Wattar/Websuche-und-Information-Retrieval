@@ -340,13 +340,7 @@ for idx, row in df.iterrows():
 #create index
 
 es = Elasticsearch()
-
-'''
-for filename in os.listdir(input_dir):
-    if filename.endswith(".zip"):
-        with ZipFile(filename, 'r') as zip:
-            zip.extractall()
-'''            
+         
 def chunks(lst, n):
     """Yield successive n-sized chunks from lst."""
     for i in range(0, len(lst), n):
@@ -360,8 +354,8 @@ def search_extended(search_param, filename, q, ind):
     score = []
     tag = []
 
-    num=1
-#['bool']['should']
+    num=51
+
     for idx, row in q.iterrows():
             
             #for key in x['match']:
